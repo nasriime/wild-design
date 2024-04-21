@@ -11,3 +11,4 @@ import image05_2x from './images/image05@2x.jpg';
 
 export const smallImages = [image01, image02, image03, image04, image05];
 export const largeImages = [image01_2x, image02_2x, image03_2x, image04_2x, image05_2x];
+export const sildersText = ["Everyday Flowers", "The Wilder Night", "Smooth Memories", "The Future Uinverse", "SHE Was Born Urban"];
