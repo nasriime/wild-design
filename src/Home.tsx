@@ -26,13 +26,23 @@ function Home() {
                 className="w-svw h-svh relative"
                 key={index}
               >
-                <img className="absolute top-0 right-0 pointer-events-none" 
+                <img className="w-full h-100 pointer-events-none" src={image} alt="" />
+                <p className="text-white absolute top-[16px] left-[16px] uppercase">XYZ Photography</p>
+                <img 
+                  className="absolute top-[16px] right-[16px] w-[248px] h-[330px] rounded-[10px] border-[1px] border-black pointer-events-none" 
                   src={largeImages.length-1 === index ? `${smallImages[0]}` : `${smallImages[index+1]}`}
                   alt="" />
-                <img className="w-full h-100 pointer-events-none" src={image} alt="" />
-                <img className="absolute bottom-0 left-0 pointer-events-none" 
+                <img 
+                  className="absolute bottom-[16px] left-[16px] w-[248px] h-[330px] rounded-[10px] border-[1px] border-black pointer-events-none" 
                   src={index === 0 ? `${smallImages[smallImages.length-1]}` : `${smallImages[index-1]}`} 
                   alt="" />
+                  <div className="absolute bottom-[16px] right-[16px]">
+                    <p className="text-white uppercase">Johanna Hobel for CHanel</p>
+                    <p className="text-white">FEB 2020</p>
+                    <button className="text-black rounded-[24px] bg-white px-[16px] pt-[9px] pb-[8px] uppercase">
+                      have a look
+                    </button>
+                  </div>
               </motion.div>
             ))}
         </motion.div>
