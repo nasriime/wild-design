@@ -1,8 +1,9 @@
-import { useState, useLayoutEffect, useCallback, useRef} from 'react';
-import { motion, useViewportScroll, useTransform, useSpring } from 'framer-motion';
+import React, { useState, useLayoutEffect, useCallback, useRef} from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import SingleSlide from './SingleSlide';
 import './Home.css';
 import { smallImages } from './sliderContent';
+import ProgressIndicator from './ProgressIndicator';
 function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const ghostRef = useRef(null)
@@ -25,7 +26,7 @@ function Home() {
     return () => resizeObserver.disconnect()
   }, [onResize])
 
-  const { scrollYProgress } = useViewportScroll()
+  const { scrollYProgress } = useScroll()
   const transform = useTransform(
     scrollYProgress,
     [0, 1],
@@ -37,6 +38,7 @@ function Home() {
   return (
     <div className="">
       <motion.div className="fixed overflow-hidden">
+        <ProgressIndicator scrollYProgress={scrollYProgress}/>
         <motion.div 
           ref={scrollRef} 
           style={{ x: spring }}

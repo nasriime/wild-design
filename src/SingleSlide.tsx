@@ -17,7 +17,7 @@ function SingleSlide({image, index}: {image: string, index: number}) {
                     }}>
                 </div>
 
-                {/* <img className="w-full h-100 pointer-events-none" src={image} alt="" /> */}
+                {/* <img className="w-full h-100" src={image} alt="" /> */}
                 <p className="text-white absolute top-[16px] left-[16px] uppercase">XYZ Photography</p>
                 
                 <div className="absolute overflow-hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -29,7 +29,7 @@ function SingleSlide({image, index}: {image: string, index: number}) {
                         <p className="font-bold text-[150px] uppercase">
                         {sildersText[index]}
                         </p>
-                        <p>{index+1} out of {smallImages.length}</p>
+                        <p>{index+1} of {smallImages.length}</p>
                     </div>
                 </div>
                 {/* Text overlap*/}
@@ -38,7 +38,7 @@ function SingleSlide({image, index}: {image: string, index: number}) {
                         className="text-shadow font-bold text-[150px] text-shadow[] uppercase">
                         {sildersText[index]}
                     </p>
-                    <p className="opacity-0">{index+1} out of {smallImages.length}</p>
+                    <p className="opacity-0">{index+1} of {smallImages.length}</p>
                 </div>
 
                 <img 
@@ -54,7 +54,9 @@ function SingleSlide({image, index}: {image: string, index: number}) {
                 <div className="absolute bottom-[16px] right-[16px]">
                     <p className="text-white uppercase">Johanna Hobel for CHanel</p>
                     <p className="text-white text-right">FEB 2020</p>
-                    <button className="text-black rounded-[24px] bg-white px-[16px] pt-[9px] pb-[8px] uppercase">
+                    <button 
+                        onClick={() => console.log(index)} 
+                        className="text-black rounded-[24px] bg-white px-[16px] pt-[9px] pb-[8px] uppercase cursor-pointer">
                         have a look
                     </button>
                 </div>
