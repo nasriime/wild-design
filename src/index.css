@@ -12,7 +12,13 @@
     src: local('Tungsten-semibold'), url(./fonts/Tungsten/Tungsten-Semibold.woff) format('woff');
 }
 
-/* body {
-    font-family: 'Tungsten-semibold', Arial, serif;
-}  */
+body {
+    /* font-family: 'Tungsten-semibold', Arial, serif; */
+    overscroll-behavior: none;
+    -ms-overflow-style: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+} 
+
 
