@@ -13,7 +13,7 @@ function SingleSlide({image, index, swiper }: SingleSlideProps) {
 
     return (
         <div
-            className="w-svw h-svh relative cursor-pointer">
+            className="w-svw h-svh relative">
             <div 
                 className="w-full h-full"
                 style={{
