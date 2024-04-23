@@ -1,5 +1,4 @@
 import { useLayoutEffect, useRef } from "react";
-import "./ProgressIndicator.css";
 
 type ProgressIndicatorProps = {
   progress?: number;
