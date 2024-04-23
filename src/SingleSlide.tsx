@@ -1,12 +1,10 @@
-import { motion } from 'framer-motion';
 import { smallImages, largeImages, sildersText } from './sliderContent';
 import classNames from 'classnames';
 
 function SingleSlide({image, index}: {image: string, index: number}) {
     return (
-        <motion.div
-            className="w-svw h-svh relative"
-            key={index}>
+        <div
+            className="w-svw h-svh relative cursor-pointer">
             <div 
                 className="w-full h-full"
                 style={{
@@ -75,7 +73,7 @@ function SingleSlide({image, index}: {image: string, index: number}) {
                         have a look
                     </button>
                 </div>
-        </motion.div>
+        </div>
     );
 }
 

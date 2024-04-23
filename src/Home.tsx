@@ -1,55 +1,36 @@
-import React, { useState, useLayoutEffect, useCallback, useRef} from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import React, { useState} from 'react';
+import SwiperCore from 'swiper';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
+import { Navigation, Thumbs, Mousewheel, Keyboard  } from 'swiper/modules'
+
 import SingleSlide from './SingleSlide';
 import './Home.css';
 import { smallImages } from './sliderContent';
 import ProgressIndicator from './ProgressIndicator';
+import '../node_modules/swiper/swiper-bundle.min.css';
+
 function Home() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const ghostRef = useRef(null)
-  const [scrollRange, setScrollRange] = useState(0)
-  const [viewportW, setViewportW] = useState(0)
-
-  useLayoutEffect(() => {
-    scrollRef && scrollRef.current && setScrollRange(scrollRef.current.scrollWidth)
-  }, [scrollRef])
-
-  const onResize = useCallback((entries: ResizeObserverEntry[]) => {
-    for (let entry of entries) {
-      setViewportW(entry.contentRect.width)
-    }
-  }, [])
-
-  useLayoutEffect(() => {
-    const resizeObserver = new ResizeObserver(entries => onResize(entries))
-    ghostRef.current && resizeObserver.observe(ghostRef.current)
-    return () => resizeObserver.disconnect()
-  }, [onResize])
-
-  const { scrollYProgress } = useScroll()
-  const transform = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, -scrollRange + viewportW]
-  )
-  const physics = { damping: 15, mass: 0.27, stiffness: 55 }
-  const spring = useSpring(transform, physics)
+  const [swiperInstance, setSwiperInstance] = useState<SwiperCore>()
 
   return (
-    <div className="">
-      <motion.div className="fixed overflow-hidden">
-        <ProgressIndicator scrollYProgress={scrollYProgress}/>
-        <motion.div 
-          ref={scrollRef} 
-          style={{ x: spring }}
-          className="w-max flex">
-            {smallImages.map((image, index) => (
-             <SingleSlide key={index} image={image} index={index}/>
-            ))}
-        </motion.div>
-      </motion.div>
-      <div ref={ghostRef} style={{ height: scrollRange }} className="ghost" />
-    </div>
+    <>
+      <Swiper
+          slidesPerView={1}
+          mousewheel={true}
+          keyboard={true}
+          watchSlidesProgress={true}
+          speed={900}
+          modules={[ Navigation, Thumbs, Mousewheel, Keyboard ]}
+          onSwiper={(swiper: SwiperCore) => setSwiperInstance(swiper)}
+          className="w-svw h-svh">
+        {/* <ProgressIndicator scrollYProgress={scrollYProgress}/> */}
+          {smallImages.map((image, index) => (
+            <SwiperSlide className="w-svw h-svh" key={index}>
+              <SingleSlide image={image} index={index}/>
+            </SwiperSlide>
+          ))}
+      </Swiper>
+    </>
   );
 }
 
