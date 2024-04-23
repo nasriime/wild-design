@@ -1,7 +1,7 @@
-import React, { useState} from 'react';
+import  { useState} from 'react';
 import SwiperCore from 'swiper';
-import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
-import { Navigation, Thumbs, Mousewheel, Keyboard  } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Thumbs, Mousewheel, Keyboard  } from 'swiper/modules';
 
 import SingleSlide from './SingleSlide';
 import './Home.css';
@@ -26,7 +26,7 @@ function Home() {
         {/* <ProgressIndicator scrollYProgress={scrollYProgress}/> */}
           {smallImages.map((image, index) => (
             <SwiperSlide className="w-svw h-svh" key={index}>
-              <SingleSlide image={image} index={index}/>
+              <SingleSlide image={image} index={index} swiper={swiperInstance}/>
             </SwiperSlide>
           ))}
       </Swiper>
