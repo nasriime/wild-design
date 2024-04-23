@@ -27,7 +27,7 @@ function SingleSlide({image, index}: {image: string, index: number}) {
                         src={image} 
                         alt="" />
                     <div className="text-white text-center absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                        <p className="font-bold text-[150px] uppercase">
+                        <p className="font-bold text-[120px] uppercase">
                             {sildersText[index]}
                         </p>
                         <p className="uppercase">
@@ -50,7 +50,7 @@ function SingleSlide({image, index}: {image: string, index: number}) {
                 {/* Text overlap*/}
                 <div className="text-center absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                     <p 
-                        className="text-shadow font-bold text-[150px] text-shadow[] uppercase">
+                        className="text-shadow font-bold text-[120px] text-shadow[] uppercase">
                         {sildersText[index]}
                     </p>
                     <p className="opacity-0">{index+1} of {smallImages.length}</p>

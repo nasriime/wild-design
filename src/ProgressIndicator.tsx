@@ -23,18 +23,18 @@ function ProgressIndicator({scrollYProgress}: {scrollYProgress: MotionValue<numb
       })
 
     return (
-        <div ref={progressRef}  className="relative progres-wrapper z-10">
+        <div ref={progressRef}  className="relative progres-wrapper z-10 pointer-events-none">
             <svg
-                className="absolute z-10 top-[-48px] left-[-48px] pointer-events-none" 
+                className="absolute top-[-48px] left-[-48px]" 
                 id="progress" 
                 width="100" 
                 height="100" 
                 viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
+                <circle cx="50" cy="50" r="20" pathLength="1" className="bg" />
                 <motion.circle
                     cx="50"
                     cy="50"
-                    r="30"
+                    r="20"
                     pathLength="1"
                     className="indicator"
                     style={{ pathLength: scrollYProgress }}

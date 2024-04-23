@@ -34,7 +34,6 @@ body {
     background-color: #fff;
     border-radius: 50%;
     display: inline-block;
-    z-index: 100;
     top: 0px;
     left: 0px;
   }
