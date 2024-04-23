@@ -3,7 +3,7 @@ import { useLayoutEffect, useRef } from 'react';
 
 
 function ProgressIndicator({scrollYProgress}: {scrollYProgress: MotionValue<number>}) {    
-    const progressRef = useRef<SVGSVGElement>(null);
+    const progressRef = useRef<HTMLDivElement>(null);
 
     useLayoutEffect(() => {
         const onMouseMove = (e: MouseEvent) => {
@@ -23,23 +23,24 @@ function ProgressIndicator({scrollYProgress}: {scrollYProgress: MotionValue<numb
       })
 
     return (
-        <svg
-            ref={progressRef} 
-            className="absolute z-10 top-[-48px] left-[-48px] pointer-events-none" 
-            id="progress" 
-            width="100" 
-            height="100" 
-            viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
-            <motion.circle
-            cx="50"
-            cy="50"
-            r="30"
-            pathLength="1"
-            className="indicator"
-            style={{ pathLength: scrollYProgress }}
-            />
-       </svg>
+        <div ref={progressRef}  className="relative progres-wrapper z-10">
+            <svg
+                className="absolute z-10 top-[-48px] left-[-48px] pointer-events-none" 
+                id="progress" 
+                width="100" 
+                height="100" 
+                viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
+                <motion.circle
+                    cx="50"
+                    cy="50"
+                    r="30"
+                    pathLength="1"
+                    className="indicator"
+                    style={{ pathLength: scrollYProgress }}
+                />
+        </svg>
+       </div>
     )
 }
 

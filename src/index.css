@@ -25,6 +25,19 @@ body {
  #progress {
     transform: rotate(-90deg);
   }
+
+  .progres-wrapper:before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+  }
   
   circle {
     stroke-dashoffset: 0;
