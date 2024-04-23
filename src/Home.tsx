@@ -10,7 +10,8 @@ import ProgressIndicator from './ProgressIndicator';
 import '../node_modules/swiper/swiper-bundle.min.css';
 
 function Home() {
-  const [swiperInstance, setSwiperInstance] = useState<SwiperCore>()
+  const [swiperInstance, setSwiperInstance] = useState<SwiperCore>();
+  const [progress, setProgress] = useState<number>(0);
 
   return (
     <>
@@ -22,8 +23,9 @@ function Home() {
           speed={900}
           modules={[ Thumbs, Mousewheel, Keyboard ]}
           onSwiper={(swiper: SwiperCore) => setSwiperInstance(swiper)}
+          onSlideChange={(swiper: SwiperCore) => setProgress(swiper.progress)}
           className="w-svw h-svh">
-        <ProgressIndicator scrollYProgress={10}/>
+          <ProgressIndicator progress={progress}/>
           {smallImages.map((image, index) => (
             <SwiperSlide className="w-svw h-svh" key={index}>
               <SingleSlide image={image} index={index} swiper={swiperInstance}/>

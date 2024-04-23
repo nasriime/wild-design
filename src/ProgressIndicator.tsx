@@ -2,10 +2,10 @@ import { useLayoutEffect, useRef } from 'react';
 import './ProgressIndicator.css';
 
 type ProgressIndicatorProps = {
-  scrollYProgress: number
+  progress?: number
 }
 
-function ProgressIndicator({scrollYProgress}: ProgressIndicatorProps) { 
+function ProgressIndicator({progress}: ProgressIndicatorProps) { 
     const progressRef = useRef<HTMLDivElement>(null);
 
     useLayoutEffect(() => {
@@ -42,7 +42,7 @@ function ProgressIndicator({scrollYProgress}: ProgressIndicatorProps) {
                     cy="50"
                     r="20"
                     className="indicator"
-                    pathLength={scrollYProgress}
+                    pathLength={progress}
                     // style={{ pathLength: scrollYProgress }}
                 />
         </svg>
