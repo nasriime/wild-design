@@ -4,7 +4,7 @@
 }
 
 circle {
-  stroke-dashoffset: 0;
+  /* stroke-dashoffset: 0; */
   stroke-width: 3%;
   fill: none;
 }

@@ -7,6 +7,8 @@ type ProgressIndicatorProps = {
 
 function ProgressIndicator({progress}: ProgressIndicatorProps) { 
     const progressRef = useRef<HTMLDivElement>(null);
+    const radius = 20;
+    const circumference = Math.ceil(Math.PI*(radius*2));
 
     useLayoutEffect(() => {
         const onMouseMove = (e: MouseEvent) => {
@@ -29,23 +31,22 @@ function ProgressIndicator({progress}: ProgressIndicatorProps) {
         <div 
           ref={progressRef} 
           className="absolute top-[-48px] left-[-48px] progres-wrapper z-10 pointer-events-none">
-            <div className="bg-white absolute w-1 h-1 rounded-full top-[48px] left-[48px] "></div>
+            <div className="bg-white absolute w-1 h-1 rounded-full top-[48px] left-[48px]"></div>
             <svg
-                className="" 
                 id="progress" 
                 width="100" 
                 height="100" 
                 viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="20" pathLength="1" className="bg" />
+                <circle cx="50" cy="50" r={radius} pathLength="1" className="bg" />
                 <circle
                     cx="50"
                     cy="50"
-                    r="20"
+                    r={radius}
                     className="indicator"
-                    pathLength={progress}
-                    // style={{ pathLength: scrollYProgress }}
+                    strokeDasharray={circumference}
+                    strokeDashoffset={(progress === 0 ? circumference : progress && Math.ceil(circumference * (1 - progress)))}
                 />
-        </svg>
+            </svg>
        </div>
     )
 }
