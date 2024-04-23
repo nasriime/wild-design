@@ -1,6 +1,11 @@
 import { useLayoutEffect, useRef } from 'react';
+import './ProgressIndicator.css';
 
-function ProgressIndicator({scrollYProgress}: {scrollYProgress: number}) {    
+type ProgressIndicatorProps = {
+  scrollYProgress: number
+}
+
+function ProgressIndicator({scrollYProgress}: ProgressIndicatorProps) { 
     const progressRef = useRef<HTMLDivElement>(null);
 
     useLayoutEffect(() => {

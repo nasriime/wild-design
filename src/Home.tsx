@@ -1,7 +1,7 @@
 import  { useState} from 'react';
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Thumbs, Mousewheel, Keyboard  } from 'swiper/modules';
+import { Thumbs, Mousewheel, Keyboard } from 'swiper/modules';
 
 import SingleSlide from './SingleSlide';
 import './Home.css';
@@ -20,10 +20,10 @@ function Home() {
           keyboard={true}
           watchSlidesProgress={true}
           speed={900}
-          modules={[ Navigation, Thumbs, Mousewheel, Keyboard ]}
+          modules={[ Thumbs, Mousewheel, Keyboard ]}
           onSwiper={(swiper: SwiperCore) => setSwiperInstance(swiper)}
           className="w-svw h-svh">
-        {/* <ProgressIndicator scrollYProgress={scrollYProgress}/> */}
+        <ProgressIndicator scrollYProgress={10}/>
           {smallImages.map((image, index) => (
             <SwiperSlide className="w-svw h-svh" key={index}>
               <SingleSlide image={image} index={index} swiper={swiperInstance}/>

@@ -31,10 +31,10 @@ function SingleSlide({image, index, swiper }: SingleSlideProps) {
                         className="w-[512px] h-[680px] rounded-[10px] border-[1px] border-black" 
                         src={image} 
                         alt="" />
-                    <MainTitle index={index}/> 
+                    <MainTitle index={index} /> 
                 </div>
                 {/* Text overlap*/}
-                <MainTitle index={index} shadow={true} opacity={true} /> 
+                <MainTitle index={index} shadow={true} opacity={true} swiper={swiper}/> 
                 <img 
                     className="absolute top-[16px] right-[16px] w-[248px] h-[330px] rounded-[10px] border-[1px] border-black cursor-pointer" 
                     src={smallImages[right]}

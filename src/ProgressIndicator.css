@@ -1,0 +1,19 @@
+
+#progress {
+    transform: rotate(-90deg);
+  }
+  
+  circle {
+    stroke-dashoffset: 0;
+    stroke-width: 3%;
+    fill: none;
+  }
+  
+  .bg {
+    stroke: #fafafa;
+    opacity: 0.3;
+  }
+  
+  #progress .indicator {
+    stroke: #fafafa;
+  } 
