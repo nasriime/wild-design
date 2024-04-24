@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: 'Tungsten-bold', Arial, serif;
+    font-family: 'Tungsten-semibold', Arial, serif;
     overscroll-behavior: none;
     -ms-overflow-style: none;
     text-rendering: optimizeLegibility;
