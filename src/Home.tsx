@@ -3,7 +3,7 @@ import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs, Mousewheel, Keyboard } from "swiper/modules";
 
-import { smallImages } from "./sliderContent";
+import { images } from "./sliderContent";
 import SingleSlide from "./SingleSlide";
 import ProgressIndicator from "./ProgressIndicator";
 import "../node_modules/swiper/swiper-bundle.min.css";
@@ -27,7 +27,7 @@ function Home() {
         className="w-svw h-svh"
       >
         <ProgressIndicator progress={progress} />
-        {smallImages.map((image, index) => (
+        {images.map((image, index) => (
           <SwiperSlide className="w-svw h-svh" key={index}>
             <SingleSlide image={image} index={index} swiper={swiperInstance} />
           </SwiperSlide>

@@ -1,6 +1,6 @@
 import SwiperCore from "swiper";
 import classNames from "classnames";
-import { smallImages, sildersText } from "./sliderContent";
+import { images, sildersContent } from "./sliderContent";
 type MainTitleProps = {
   index: number;
   shadow?: boolean;
@@ -23,15 +23,16 @@ function MainTitle({
           { "text-shadow": shadow }
         )}
       >
-        {sildersText[index]}
+        {sildersContent[index]["title"]}
       </p>
       <p className={classNames("uppercase mt-3", { "opacity-0": opacity })}>
         <span className="inline-block text-white font-helvetica text-[10px] leading-3">
-          <span>{index + 1}</span><span className="mx-2">of</span>
-          <span>{smallImages.length}</span>
+          <span>{index + 1}</span>
+          <span className="mx-2">of</span>
+          <span>{images.length}</span>
         </span>
-        <span id="bullets-container" className="ml-6">
-          {smallImages.map((_, i) => (
+        <span className="ml-6">
+          {images.map((_, i) => (
             <span
               onClick={() => {
                 swiper?.slideTo(i);

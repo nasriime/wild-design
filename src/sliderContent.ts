@@ -9,18 +9,45 @@ import image04_2x from "./images/image04@2x.jpg";
 import image05 from "./images/image05.jpg";
 import image05_2x from "./images/image05@2x.jpg";
 
-export const smallImages = [image01, image02, image03, image04, image05];
-export const largeImages = [
+export const images: string[] = [image01, image02, image03, image04, image05];
+export const largeImages: string[] = [
   image01_2x,
   image02_2x,
   image03_2x,
   image04_2x,
   image05_2x,
 ];
-export const sildersText = [
-  "Everyday Flowers",
-  "The Wilder Night",
-  "Smooth Memories",
-  "The Future Uinverse",
-  "SHE Was Born Urban",
+
+type sildersContentType = {
+  title: string;
+  author: string;
+  date: string;
+};
+
+export const sildersContent: sildersContentType[] = [
+  {
+    title: "Everyday Flowers",
+    author: "Johanna Hobel for VOUGE",
+    date: "JUN 2019",
+  },
+  {
+    title: "The Wilder Night",
+    author: "Johanna Hobel for WILD",
+    date: "DEC 2019",
+  },
+  {
+    title: "Smooth Memories",
+    author: "Johanna Hobel for CHANEL",
+    date: "FEB 2020",
+  },
+  {
+    title: "The Future Uinverse",
+    author: "Johanna Hobel for ON",
+    date: "APR 2020",
+  },
+  {
+    title: "SHE Was Born Urban",
+    author: "Johanna Hobel for SI",
+    date: "DEC 2021",
+  },
 ];
