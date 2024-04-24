@@ -18,18 +18,19 @@ function MainTitle({
     <div className="text-center absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
       <p
         className={classNames(
-          "text-[220px] w-[800px] leading-[176px] uppercase",
+          "text-[220px] w-[820px] leading-[176px] uppercase tracking-wide",
           { "text-white": !shadow },
           { "text-shadow": shadow }
         )}
       >
         {sildersText[index]}
       </p>
-      <p className={classNames("uppercase mt-4", { "opacity-0": opacity })}>
-        <span className="text-white">
-          {index + 1} of {smallImages.length}
+      <p className={classNames("uppercase mt-3", { "opacity-0": opacity })}>
+        <span className="inline-block text-white font-helvetica text-[10px] leading-3">
+          <span>{index + 1}</span><span className="mx-2">of</span>
+          <span>{smallImages.length}</span>
         </span>
-        <span id="bullets-container" className="ml-5">
+        <span id="bullets-container" className="ml-6">
           {smallImages.map((_, i) => (
             <span
               onClick={() => {

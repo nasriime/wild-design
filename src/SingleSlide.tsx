@@ -38,7 +38,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
       {/* Text overlap for title*/}
       <MainTitle index={index} shadow={true} opacity={true} swiper={swiper} />
       <img
-        className="absolute top-[16px] right-[16px] w-[248px] h-[330px] rounded-[10px] border-[1px] border-black cursor-pointer"
+        className="absolute top-[16px] right-[16px] w-[248px] h-[330px] rounded-[10px] border-[1px] border-black cursor-pointer hover:scale-105"
         src={smallImages[next]}
         onClick={() => {
           swiper?.slideTo(next);
@@ -46,7 +46,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
         alt={smallImages[next]}
       />
       <img
-        className="absolute bottom-[16px] left-[16px] w-[248px] h-[330px] rounded-[10px] border-[1px] border-black cursor-pointer"
+        className="absolute bottom-[16px] left-[16px] w-[248px] h-[330px] rounded-[10px] border-[1px] border-black cursor-pointer hover:scale-105"
         src={smallImages[prev]}
         onClick={() => {
           swiper?.slideTo(prev);

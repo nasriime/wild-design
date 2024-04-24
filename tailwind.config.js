@@ -4,7 +4,13 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx,html,css}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'Tungsten-bold': 'Tungsten-bold, Arial, serif',
+        'Tungsten-semibold': 'Tungsten-semibold, Arial, serif',
+        'helvetica': 'Helvetica, Arial, sans-serif'
+      }
+    },
   },
   plugins: [],
 }
