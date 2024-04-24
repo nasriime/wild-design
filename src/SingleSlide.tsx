@@ -1,6 +1,8 @@
+import { useState } from "react";
 import SwiperCore from "swiper";
 import MainTitle from "./MainTitle";
 import { smallImages } from "./sliderContent";
+import classNames from "classnames";
 
 type SingleSlideProps = {
   image: string;
@@ -31,6 +33,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
         <img
           className="w-[512px] h-[680px] rounded-[10px] border-[1px] border-black"
           src={image}
+          loading={index === 0 ? "eager" : "lazy"}
           alt={image}
         />
         <MainTitle index={index} />
@@ -43,6 +46,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
         onClick={() => {
           swiper?.slideTo(next);
         }}
+        loading={index === 0 ? "eager" : "lazy"}
         alt={smallImages[next]}
       />
       <img
@@ -51,6 +55,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
         onClick={() => {
           swiper?.slideTo(prev);
         }}
+        loading={index === 0 ? "eager" : "lazy"}
         alt={smallImages[prev]}
       />
       <div className="absolute bottom-[16px] right-[16px]">
