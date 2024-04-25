@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'tablet': '821px'
+      },
       fontFamily: {
         'Tungsten-bold': 'Tungsten-bold, Arial, serif',
         'Tungsten-semibold': 'Tungsten-semibold, Arial, serif',

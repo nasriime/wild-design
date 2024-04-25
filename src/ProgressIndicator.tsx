@@ -29,7 +29,7 @@ function ProgressIndicator({ progress }: ProgressIndicatorProps) {
   return (
     <div
       ref={progressRef}
-      className="absolute top-[-48px] left-[-48px] progres-wrapper z-10 pointer-events-none"
+      className="absolute top-[48px] tablet:top-[-48px] left-[48px] tablet:left-[-48px] z-10 pointer-events-none"
     >
       <div className="bg-white absolute w-1 h-1 rounded-full top-[48px] left-[48px]"></div>
       <svg
