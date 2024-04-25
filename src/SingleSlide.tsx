@@ -27,17 +27,17 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
       >
         XYZ Photography
       </a>
-      <div className="absolute overflow-hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-10">
+      <div className="absolute overflow-hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
         <img
           className="w-[512px] h-[680px] rounded-[10px] border-[1px] border-black"
           src={image}
           loading={index === 0 ? "eager" : "lazy"}
           alt={image}
         />
-        <MainTitle index={index} swiper={swiper} />
+        <MainTitle index={index} opacity={true} swiper={swiper} />
       </div>
       {/* Text overlap for title*/}
-      <MainTitle index={index} shadow={true} opacity={true} swiper={swiper} />
+      <MainTitle index={index} shadow={true} swiper={swiper} />
       <div className="absolute top-[16px] right-[16px] w-[248px] h-[330px] overflow-hidden rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer transition-all duration-500 ease-in-out">
         <img
           className="w-full h-full hover:scale-110 transition-all duration-500 ease-in-out"
