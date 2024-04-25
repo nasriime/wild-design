@@ -39,8 +39,8 @@ function MainTitle({
               }}
               className={classNames(
                 "w-[5px] h-[8px] rounded-sm ml-2 inline-block cursor-pointer",
-                { "bg-white": i <= index },
-                { "border-[2px] border-white": i > index }
+                { "bg-white hover:bg-black": i <= index },
+                { "border-[2px] border-white hover:border-black": i > index }
               )}
               key={i}
             ></span>

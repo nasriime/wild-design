@@ -27,7 +27,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
       >
         XYZ Photography
       </a>
-      <div className="absolute overflow-hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+      <div className="absolute overflow-hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-10">
         <img
           className="w-[512px] h-[680px] rounded-[10px] border-[1px] border-black"
           src={image}
