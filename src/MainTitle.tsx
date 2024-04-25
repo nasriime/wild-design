@@ -18,7 +18,7 @@ function MainTitle({
     <div className="text-center absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
       <p
         className={classNames(
-          "text-[220px] w-[820px] leading-[176px] uppercase tracking-wide",
+          "xl:text-[220px] md:text-[170px] sm:text-[120px] text-[90px] xl:w-[820px] md:w-[640px] sm:w-[500px] w-[350px] xl:leading-[176px] leading-[130px] uppercase tracking-wide",
           { "text-white": !shadow },
           { "text-shadow": shadow }
         )}

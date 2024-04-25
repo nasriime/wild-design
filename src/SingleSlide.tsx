@@ -27,9 +27,9 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
       >
         XYZ Photography
       </a>
-      <div className="absolute overflow-hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+      <div className="absolute xl:w-[512px] md:w-[412px] sm:w-[310px] w-[220px] xl:h-[680px] md:h-[520px] sm:h-[440px] h-[340px] overflow-hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
         <img
-          className="w-[512px] h-[680px] rounded-[10px] border-[1px] border-black"
+          className="w-full h-full rounded-[10px] border-[1px] border-black"
           src={image}
           loading={index === 0 ? "eager" : "lazy"}
           alt={image}
@@ -38,7 +38,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
       </div>
       {/* Text overlap for title*/}
       <MainTitle index={index} shadow={true} swiper={swiper} />
-      <div className="absolute top-[16px] right-[16px] w-[248px] h-[330px] overflow-hidden rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer transition-all duration-500 ease-in-out">
+      <div className="absolute top-[16px] right-[16px] xl:w-[248px] md:w-[170px] sm:w-[130px] w-[75px] xl:h-[330px] md:h-[185px] sm:h-[145px] h-[95px] overflow-hidden rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer transition-all duration-500 ease-in-out">
         <img
           className="w-full h-full hover:scale-110 transition-all duration-500 ease-in-out"
           src={images[next]}
@@ -49,7 +49,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
           alt="Next slide"
         />
       </div>
-      <div className="absolute bottom-[16px] left-[16px] w-[248px] h-[330px] overflow-hidden rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer transition-all duration-500 ease-in-out">
+      <div className="absolute bottom-[16px] left-[16px] xl:w-[248px] md:w-[170px] sm:w-[130px] w-[75px] xl:h-[330px] md:h-[185px] sm:h-[145px] h-[95px] overflow-hidden rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer transition-all duration-500 ease-in-out">
         <img
           className="w-full h-full hover:scale-110 transition-all duration-500 ease-in-out"
           src={images[prev]}
@@ -60,7 +60,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
           alt="Previous slide"
         />
       </div>
-      <div className="absolute w-[111px] h-[120px] bottom-[100px] right-[150px] text-[10px] font-helvetica font-normal tracking-[1px]">
+      <div className="absolute w-[111px] h-[99px] md:bottom-[100px] bottom-[16px] md:right-[150px] right-[16px] text-[10px] font-helvetica font-normal tracking-[1px]">
         <p className="text-white uppercase leading-3 mb-4 ">
           {sildersContent[index]["author"]}
         </p>
@@ -73,7 +73,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
 export default SingleSlide;
