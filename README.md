@@ -1,6 +1,6 @@
 # Wild Design
 
-This project is live [here](https://wild-design-git-main-nasriimes-projects.vercel.app).
+This project is live [here](https://wild-design.vercel.app).
 
 ## Running the app
 
