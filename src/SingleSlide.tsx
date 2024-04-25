@@ -34,7 +34,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
           loading={index === 0 ? "eager" : "lazy"}
           alt={image}
         />
-        <MainTitle index={index} />
+        <MainTitle index={index} swiper={swiper} />
       </div>
       {/* Text overlap for title*/}
       <MainTitle index={index} shadow={true} opacity={true} swiper={swiper} />
