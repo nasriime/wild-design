@@ -7,7 +7,6 @@ import { images } from "./sliderContent";
 import SingleSlide from "./SingleSlide";
 import ProgressIndicator from "./ProgressIndicator";
 import "../node_modules/swiper/swiper-bundle.min.css";
-import "./Home.css";
 
 function Home() {
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore>();

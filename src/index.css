@@ -1,23 +1,25 @@
 @tailwind base;
-@tailwind components;   
+@tailwind components;
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Tungsten-bold';
-    src: local('Tungsten-bold'), url(./fonts/Tungsten/Tungsten-Bold.woff) format('woff');
+  font-family: "Tungsten-bold";
+  src: local("Tungsten-bold"),
+    url(./fonts/Tungsten/Tungsten-Bold.woff) format("woff");
 }
-  
+
 @font-face {
-    font-family: 'Tungsten-semibold';
-    src: local('Tungsten-semibold'), url(./fonts/Tungsten/Tungsten-Semibold.woff) format('woff');
+  font-family: "Tungsten-semibold";
+  src: local("Tungsten-semibold"),
+    url(./fonts/Tungsten/Tungsten-Semibold.woff) format("woff");
 }
 
 body {
-    font-family: 'Tungsten-semibold', Arial, serif;
-    overscroll-behavior: none;
-    -ms-overflow-style: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    cursor: none;
-} 
+  font-family: "Tungsten-semibold", Arial, serif;
+  overscroll-behavior: none;
+  -ms-overflow-style: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+}

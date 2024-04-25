@@ -1,6 +1,8 @@
 import SwiperCore from "swiper";
 import classNames from "classnames";
 import { images, sildersContent } from "./sliderContent";
+import "./MainTitle.css";
+
 type MainTitleProps = {
   index: number;
   shadow?: boolean;
