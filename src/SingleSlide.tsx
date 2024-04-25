@@ -38,24 +38,28 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
       </div>
       {/* Text overlap for title*/}
       <MainTitle index={index} shadow={true} opacity={true} swiper={swiper} />
-      <img
-        className="absolute top-[16px] right-[16px] w-[248px] h-[330px] rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
-        src={images[next]}
-        onClick={() => {
-          swiper?.slideTo(next);
-        }}
-        loading={index === 0 ? "eager" : "lazy"}
-        alt="Next slide"
-      />
-      <img
-        className="absolute bottom-[16px] left-[16px] w-[248px] h-[330px] rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
-        src={images[prev]}
-        onClick={() => {
-          swiper?.slideTo(prev);
-        }}
-        loading={index === 0 ? "eager" : "lazy"}
-        alt="Previous slide"
-      />
+      <div className="absolute top-[16px] right-[16px] w-[248px] h-[330px] overflow-hidden rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer transition-all duration-500 ease-in-out">
+        <img
+          className="w-full h-full hover:scale-110 transition-all duration-500 ease-in-out"
+          src={images[next]}
+          onClick={() => {
+            swiper?.slideTo(next);
+          }}
+          loading={index === 0 ? "eager" : "lazy"}
+          alt="Next slide"
+        />
+      </div>
+      <div className="absolute bottom-[16px] left-[16px] w-[248px] h-[330px] overflow-hidden rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer transition-all duration-500 ease-in-out">
+        <img
+          className="w-full h-full hover:scale-110 transition-all duration-500 ease-in-out"
+          src={images[prev]}
+          onClick={() => {
+            swiper?.slideTo(prev);
+          }}
+          loading={index === 0 ? "eager" : "lazy"}
+          alt="Previous slide"
+        />
+      </div>
       <div className="absolute w-[111px] h-[120px] bottom-[100px] right-[150px] text-[10px] font-helvetica font-normal tracking-[1px]">
         <p className="text-white uppercase leading-3 mb-4 ">
           {sildersContent[index]["author"]}
