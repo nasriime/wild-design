@@ -8,8 +8,8 @@ type SingleSlideProps = {
   swiper?: SwiperCore;
 };
 function SingleSlide({ image, index, swiper }: SingleSlideProps) {
-  const next = images.length - 1 === index ? 0 : index + 1;
-  const prev = index === 0 ? images.length - 1 : index - 1;
+  const next: number = images.length - 1 === index ? 0 : index + 1;
+  const prev: number = index === 0 ? images.length - 1 : index - 1;
 
   return (
     <div className="w-svw h-svh relative">

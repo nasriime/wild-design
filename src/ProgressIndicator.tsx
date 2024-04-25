@@ -51,7 +51,7 @@ function ProgressIndicator({ progress }: ProgressIndicatorProps) {
           cy="50"
           r={radius}
           fill="none"
-          className="stroke-[#fafafa] stroke-[3%]"
+          className="stroke-[#fafafa] stroke-[3%] transition-all duration-1000 ease-in-out"
           strokeDasharray={circumference}
           strokeDashoffset={
             progress === 0
