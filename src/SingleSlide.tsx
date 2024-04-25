@@ -40,7 +40,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
       <MainTitle index={index} shadow={true} swiper={swiper} />
       <div className="absolute top-[16px] right-[16px] xl:w-[248px] md:w-[170px] sm:w-[130px] w-[75px] xl:h-[330px] md:h-[185px] sm:h-[145px] h-[95px] overflow-hidden rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer transition-all duration-500 ease-in-out">
         <img
-          className="w-full h-full hover:scale-110 transition-all duration-500 ease-in-out"
+          className="w-full h-full hover:scale-110 hover:brightness-150 transition-all duration-500 ease-in-out"
           src={images[next]}
           onClick={() => {
             swiper?.slideTo(next);
@@ -51,7 +51,7 @@ function SingleSlide({ image, index, swiper }: SingleSlideProps) {
       </div>
       <div className="absolute bottom-[16px] left-[16px] xl:w-[248px] md:w-[170px] sm:w-[130px] w-[75px] xl:h-[330px] md:h-[185px] sm:h-[145px] h-[95px] overflow-hidden rounded-[10px] border-[1px] hover:border-[1px] border-black hover:border-white cursor-pointer transition-all duration-500 ease-in-out">
         <img
-          className="w-full h-full hover:scale-110 transition-all duration-500 ease-in-out"
+          className="w-full h-full hover:scale-110 hover:brightness-150	transition-all duration-500 ease-in-out"
           src={images[prev]}
           onClick={() => {
             swiper?.slideTo(prev);
