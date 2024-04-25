@@ -6,8 +6,8 @@ type ProgressIndicatorProps = {
 
 function ProgressIndicator({ progress }: ProgressIndicatorProps) {
   const progressRef = useRef<HTMLDivElement>(null);
-  const radius = 20;
-  const circumference = Math.ceil(Math.PI * (radius * 2));
+  const radius: number = 20;
+  const circumference: number = Math.ceil(Math.PI * (radius * 2));
 
   useLayoutEffect(() => {
     const onMouseMove = (e: MouseEvent) => {
