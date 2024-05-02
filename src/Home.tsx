@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Thumbs, Mousewheel, Keyboard } from "swiper/modules";
+import { Thumbs, Mousewheel, Keyboard, EffectCube } from "swiper/modules";
 
 import { images } from "./sliderContent";
 import SingleSlide from "./SingleSlide";
@@ -14,13 +14,20 @@ function Home() {
 
   return (
     <>
-      <Swiper
+      <Swiper effect={'cube'}
+        grabCursor={true}
+        cubeEffect={{
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        }}
         slidesPerView={1}
         mousewheel={true}
         keyboard={true}
         watchSlidesProgress={true}
         speed={900}
-        modules={[Thumbs, Mousewheel, Keyboard]}
+        modules={[Thumbs, Mousewheel, Keyboard, EffectCube]}
         onSwiper={(swiper: SwiperCore) => setSwiperInstance(swiper)}
         onSlideChange={(swiper: SwiperCore) => setProgress(swiper.progress)}
         className="w-svw h-svh"
