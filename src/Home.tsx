@@ -14,8 +14,8 @@ function Home() {
 
   return (
     <>
-      <Swiper effect={'cube'}
-        grabCursor={true}
+      <Swiper
+        effect={"cube"}
         cubeEffect={{
           shadow: true,
           slideShadows: true,
@@ -30,7 +30,7 @@ function Home() {
         modules={[Thumbs, Mousewheel, Keyboard, EffectCube]}
         onSwiper={(swiper: SwiperCore) => setSwiperInstance(swiper)}
         onSlideChange={(swiper: SwiperCore) => setProgress(swiper.progress)}
-        className="w-svw h-svh"
+        className="w-svw h-svh !overflow-hidden"
       >
         <ProgressIndicator progress={progress} />
         {images.map((image, index) => (
